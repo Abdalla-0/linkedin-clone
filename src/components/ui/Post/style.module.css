@@ -1,0 +1,70 @@
+.cardPost {
+    padding-inline: 16px;
+    background-color: var(--color-white);
+    padding-inline: 16px;
+    padding-block: 16px;
+
+    .cardStart {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-block-end: 16px;
+        margin-block-end: 4px;
+
+        .userInfo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            .closeIcon {
+                width: 18px;
+                height: auto;
+                cursor: pointer;
+            }
+            .actionIcon {
+                cursor: pointer;
+            }
+        }
+
+        .img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .time {
+            font-size: 12px;
+            color: var(--color-gray-dark);
+        }
+
+    }
+    .cardEnd {
+        display: flex;
+        margin-block-start: 4px;
+        .btnAction {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding-block: 12px;
+            padding-inline: 16px;
+            border-radius: 0;
+            transition: .3s;
+            font-weight: normal;
+            &:is(:hover) {
+                background-color: var(--color-gray);
+            }
+            .btnTitle {
+                @media (max-width: 768px) {
+                    display: none;
+                }
+            }
+        }
+    }
+}

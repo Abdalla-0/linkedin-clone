@@ -1,0 +1,10 @@
+.lottieHandlerBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .lottieHandler {
+        max-width: 1000px;
+    }
+   
+}

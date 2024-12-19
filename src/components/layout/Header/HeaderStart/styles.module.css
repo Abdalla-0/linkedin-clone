@@ -1,0 +1,16 @@
+.headerStart {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    @media (min-width:992px) {
+        max-width: 35%;
+    }
+
+    .searchIcon {
+        position: absolute;
+        top: 50%;
+        inset-inline-start: 14px;
+        transform: translate(-50%, -50%);
+    }
+}

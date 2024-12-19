@@ -1,0 +1,12 @@
+.hashBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 28px;
+    font-weight: normal;
+    background-color: #c3cdea;
+    border: 5px solid #8fa5e5;
+}
