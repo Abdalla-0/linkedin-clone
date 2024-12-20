@@ -93,7 +93,7 @@ const Post = () => {
           </div>
         ))
       ) : (
-        <p>No post Found</p>
+        <p>There are no posts</p>
       )}
     </Loading>
   );
