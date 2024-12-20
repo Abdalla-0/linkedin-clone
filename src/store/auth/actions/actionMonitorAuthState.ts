@@ -13,8 +13,10 @@ const monitorAuthState = createAsyncThunk(
                     displayName: user.displayName,
                     photoURL: user.photoURL,
                 };
+                localStorage.setItem("user", JSON.stringify(userData));
                 dispatch(setUser(userData));
             } else {
+                localStorage.removeItem("user");
                 dispatch(setUser(null));
             }
         });

@@ -1,24 +1,12 @@
 import { Col, Container, Nav, Row } from "react-bootstrap";
 import styles from "./style.module.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "@store/hook";
-import { actionLoginByGooglePopup } from "@store/auth/authSlice";
+import { useAppSelector } from "@store/hook";
 import { useEffect } from "react";
-import { toast } from "react-toastify";
+import BtnLoginWithGoogle from "@components/ui/BtnLoginWithGoogle/BtnLoginWithGoogle";
 const Interface = () => {
-  const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.auth);
   const navigate = useNavigate();
-  const loginWithGooglePopup = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      await dispatch(actionLoginByGooglePopup()).unwrap(); // إذا كان unwrap موجودًا
-      toast.success("Logged in successfully! 🎉");
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (error: any) {
-      toast.error(error?.message || "Login failed. Please try again.");
-    }
-  };
   useEffect(() => {
     if (user) {
       navigate("/home");
@@ -48,13 +36,7 @@ const Interface = () => {
               <h1 className={styles.heading}>
                 Welcome to your profissional community
               </h1>
-              <button
-                className={`${styles.btnGoogle}`}
-                onClick={(e) => loginWithGooglePopup(e)}
-              >
-                <img src="/images/google.svg" alt="Google Icon" />
-                Sign in with Google
-              </button>
+              <BtnLoginWithGoogle height="52px"/>
             </Col>
             <Col sm={6}>
               <img src="/images/login-hero.svg" alt="Hero Image" />

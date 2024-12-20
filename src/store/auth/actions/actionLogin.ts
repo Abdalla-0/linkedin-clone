@@ -14,8 +14,10 @@ const actionLogin = createAsyncThunk(
         try {
             const userCredential = await signInWithEmailAndPassword(auth, user.email, user.password);
             return {
-                email: userCredential.user.email,
                 uid: userCredential.user.uid,
+                email: userCredential.user.email,
+                displayName: userCredential.user.displayName,
+                photoURL: userCredential.user.photoURL,
             };
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (error: any) {

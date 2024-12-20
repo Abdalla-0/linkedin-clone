@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom";
 import Header from "@components/layout/Header/Header";
-import { ToastContainer } from "react-toastify";
 import { useEffect } from "react";
 import { monitorAuthState } from "@store/auth/authSlice";
 import { useAppDispatch } from "@store/hook";
@@ -37,7 +36,6 @@ const MainLayout = () => {
           </Row>
         </Container>
       </div>
-      <ToastContainer />
     </>
   );
 };

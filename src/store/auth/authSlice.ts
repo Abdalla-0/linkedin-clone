@@ -36,10 +36,11 @@ const authSlice = createSlice({
     builder.addCase(actionRegister.fulfilled, (state, action) => {
       state.loading = "successeded";
       state.user = action.payload;
+      localStorage.setItem('user', JSON.stringify(state.user))
     })
     builder.addCase(actionRegister.rejected, (state, action) => {
       state.loading = "failed";
-      state.error = action.payload as string;
+      state.error = action.payload as string || "Registration failed";
     })
 
     // login 
@@ -50,6 +51,7 @@ const authSlice = createSlice({
     builder.addCase(actionLogin.fulfilled, (state, action) => {
       state.loading = "successeded";
       state.user = action.payload;
+      localStorage.setItem('user', JSON.stringify(state.user))
     })
     builder.addCase(actionLogin.rejected, (state, action) => {
       state.loading = "failed";
@@ -77,9 +79,10 @@ const authSlice = createSlice({
       state.loading = "pending";
       state.error = null;
     })
-    builder.addCase(actionLogout.fulfilled, (state, action) => {
+    builder.addCase(actionLogout.fulfilled, (state) => {
       state.loading = "successeded";
       state.user = null;
+      localStorage.removeItem("user");
     })
     builder.addCase(actionLogout.rejected, (state, action) => {
       state.loading = "failed";
