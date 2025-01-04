@@ -37,7 +37,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/home",
+    path: "/feed",
     element: (
       <ProtectedRoutes>
         <PageSusbence>
